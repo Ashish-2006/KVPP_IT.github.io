@@ -1,108 +1,243 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Kirito</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href=''>
-    <script src='main.js'></script>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        body{
-            background-image: url(128356-large-sao-background-2169x1099.jpg);
-            background-size: cover;
-            background-attachment: fixed;
-            background-blend-mode: lighten;
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .wrapper{
+  clip-path: circle(75%);
+}
+.menu-btn{
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  /* left: 20px; */
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .menu-btn{
+  background: #fff;
+  color: #4158d0;
+}
+#active:checked ~ .menu-btn i:before{
+  content: "\f00d";
+}
+.wrapper ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #4158d0;
+}
+input[type="checkbox"]{
+  display: none;
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  color: #202020;
+}
+.content .title{
+  font-size: 40px;
+  font-weight: 700;
+}
+.content p{
+  font-size: 35px;
+  font-weight: 600;
+}
 
-            backface-visibility: visible;
-            margin: 18px 18px;
-            
-        }
-        .heading01  h1{
-            margin-top: 15px;
-            font-size: 45px;
-            align-items: center;
-            text-align: center;
-            font-family: mv bhohi;
-            text-decoration: underline;
-
-        }
-        .wrapper table{
-            align-items: center;
-            text-align: center;
-        }
-        .para01 p{
-            font-size: 25px;
-            color: #000;
-            font-family: cursive;
-
-        }
-        table{
-            align-items: left;
-            align-content: left;
-            margin: 5px  5px;
-            background: #fff;
-        }
-        h2{
-            font-size: 25px;
-        }
-        h3{
-            font-size: 35px;
-        }
-        a{
-            text-decoration: none;
-            color: #000;
-        }
     </style>
-</head>
-<body>
-<div class="heading01">
-    <h1><b>Kirito (Sword Art Online)</b></h1>
+  </head>
+  <body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+      <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">content</a></li>
+<li><a href="login form 01.html">Sign in</a></li>
+<li><a href="rate us.html">Rate us</a></li>
+</ul>
 </div>
-<center>
-<div class="wrappper">
-<table border="02">
-    <tr>
-        <td><center><h3>Kirito</h3></center></td>
-    </tr><br><br>
+<h1 style="align-items: center; text-align: center; size: 50px;color: #000; font-size: 37px; margin-top: 23px;">Sword art online</b></h1>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-col">
+    <div class="lg:w-4/6 mx-auto">
+      <div class="rounded-lg h-64 overflow-hidden">
+        <img alt="content" class="object-cover object-center h-full w-full" src="https://cdn.wallpapersafari.com/41/8/LT3W6K.jpg">
+      </div>
+      <div class="flex flex-col sm:flex-row mt-10">
+        <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+          <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+            
+             
+              <img src="https://i.pinimg.com/originals/c2/05/76/c20576db2e5f6295e36837ab4c15342a.jpg" height="50px" width="80px" style="border-radius: 12px;">
+            </svg>
+          </div>
+          <div class="flex flex-col items-center text-center justify-center">
+            <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Kirigaya Kazuto</h2>
+            <div class="w-12 h-1 bg-purple-500 rounded mt-2 mb-4"></div>
+            <p class="text-base">Kirito described the appearance of his avatar at the beginning of the game and the beta-testing phase as having the appearance of a ridiculously handsome protagonist from some fantasy animation.</p>
+          </div>
+        </div>
+        <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+          <p class="leading-relaxed text-lg mb-4">Kirito was chosen to be one of the one thousand beta testers for the closed beta of Sword Art Online, the first ever Virtual Reality Massively Multiplayer Online Role-Playing Game (VRMMORPG) for the NerveGear, and later joined the official version of the game. He thus became one of the 10,000 players who were trapped in Sword Art Online, where he remained a solo player for the majority of the game, willingly taking on the role of a Beater to reduce discrimination against other former beta testers, as well as actively taking part in Boss battles as one of the Clearers. Kirito temporarily became a member of the Moonlit Black Cats after helping them safely escape a dangerous dungeon, but returned to being a solo player when a fatal error resulted in the death of the other guild members. At some point in the game, Kirito became known as the «Black Swordsman» (黒の剣士, Kuro no Kenshi?) due to his tendency to wear black clothing. Near the end of the game, Kirito joined the Knights of the Blood due to losing a wager with its leader, Heathcliff. Kirito eventually put an end to the game by defeating the final boss, thus clearing the game.
 
-    <tr>
-        <td><center><br><h2>Sword art online character</h2><br><img src="180px-Kirito_Sword_Art_Online.png"><br><H2>Kirito,as he apppeared in <br>sword art online<br></H2></center></td>
-    </tr> 
-    <tr><br><br>
-        <td><h2><center>Created by - <a href="https://en.wikipedia.org/wiki/Reki_Kawahara">Reki Kawahara</a></center></h2></td>
-    </tr> <br><br>
-    <tr>
-        <td><h2><center>Voiced by-<br>Yoshitsugu Matsuoka (Japanese)<br>
-Bryce Papenbrook (English)<br></center></h2></td>
-    </tr>  
-</table>
-</div>
-<br><br>
-
-<div class="para01">
-    <p>Kazuto Kirigaya (桐ヶ谷 和人, Kirigaya Kazuto), born as Kazuto Narusaka (鳴坂 和人, Narusaka Kazuto), is a fictional character and the protagonist of the Sword Art Online series of light novels written by Reki Kawahara. He is more commonly known by his portmanteau, Kirito (キリト, Kirito), his player name in the eponymous video game which the novels are partially set in.<br><br>
-
-In the series, Kirito is depicted as a teenager who was chosen as one of 1,000 beta testers for a new state-of-the-art virtual reality MMORPG called Sword Art Online. After the game is released to the general public, he and the rest of the 10,000 players soon discover that they are unable to log out and are trapped in the simulation unless they manage to beat the game.<br><br>
-
-In the anime adaptation, Kirito is voiced in Japanese by Yoshitsugu Matsuoka and in English by Bryce Papenbrook. Due to the initial popularity of Sword Art Online, Kirito has become an extremely well recognized character in the anime and manga fandom.<br>
-<br><br><br>
 </p>
-    <center><iframe src="https://swordartonline.fandom.com/wiki/Kirigaya_Kazuto?file=Kazuto.png" height="700" width="900">
-        
-    </iframe></center><br><br>
-    <hr size="04"color="#000">
-    <hr size="04"color="#000">
-    <hr size="04"color="#000"><br><br></center></div><center><center>
-    <a href="https://en.wikipedia.org/api/rest_v1/page/pdf/Kirito_%28Sword_Art_Online%29"><i class="far fa-file-pdf fa-5x" style="color: #000"></i></a> ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ 
-    <a href="index.html"><i class="fas fa-home fa-5x" style="color: #000;" ></i></a>
-</center></center>
-</div>
+          <a class="text-purple-500 inline-flex items-center" href="https://swordartonline.fandom.com/wiki/Kirigaya_Kazuto" style="text-decoration: none;">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap w-full mb-20">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Sword art online</h1>
+        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+      </div>
+      <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">In the full version of the game, during Kayaba Akihiko's tutorial, all player avatars were changed to reflect their real life appearances. After this change, Kirito's SAO avatar had slightly long but neat black hair and black eyes. His delicate face showed no trace of masculinity, allowing people to easily mistake him for a girl.</p>
+    </div>
+    <div class="flex flex-wrap -m-4">
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://pa1.narvii.com/5959/5339872b40bdbdf248597fca90d46ff9212a2416_hq.gif" alt="content">
+          <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">ALfheim Online</h2>
+          <p class="leading-relaxed text-base">Kirito's initial appearance was that of a default , which he chose because of the race's black-themed equipment. Instead of the normal black forelocks , his black hair stood in natural spikes. His large eyes appeared mischievous, his ears were pointy, and he had dark greyish blue wings.</p>
+        </div>
+      </div>
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://i.pinimg.com/originals/cf/21/fa/cf21fa0431456e4bf55814408cd34f97.gif" alt="content">
+          <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Gun Gale Online</h2>
+          <p class="leading-relaxed text-base">Kazuto's avatar in Gun Gale Online belongs to the rare M9000 series. It is an avatar that many male players dream of having, due to its feminine appearance. Kazuto's avatar in Gun Gale Online is both shorter and more slender than his spriggan avatar in ALfheim Online. </p>
+        </div>
+      </div>
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://thumbs.gfycat.com/EthicalBleakJohndory-size_restricted.gif" alt="content">
+          <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Aincrad art</h2>
+          <p class="leading-relaxed text-base">Shortly after logging in to the fully released SAO, Kirito was stopped by a stranger. Klein, a new guy, asks for his help in learning how to play.<br> After befriending each other and training in the fields for several hours, they were forcefully teleported back to the Town of Beginnings, to receive an announcement from Kayaba Akihiko.</p>
+        </div>
+      </div>
+      <div class="xl:w-1/4 md:w-1/2 p-4">
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://64.media.tumblr.com/7e25efb6a5d9869bedc299ebb249b444/tumblr_ox1pf6RoAH1vz54q7o9_540.gifv" alt="content">
+          <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"></h3>
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Ordinal scale</h2>
+          <p class="leading-relaxed text-base"> In 2026, a new machine called the Augma is developed to compete against the NerveGear and its successor, the AmuSphere.
+
+A next-gen wearable device, the Augma does not have a full-dive function like its predecessors. Instead, it uses Augmented Reality to get players into the game. It is safe, user-friendly and lets users play while they are conscious, making it an instant hit on the marke </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Register</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
+    </div>
+    <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+      <div class="relative flex-grow w-full">
+        <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
+        <input type="text" id="full-name" name="full-name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <div class="relative flex-grow w-full">
+        <label for="email" class="leading-7 text-sm text-gray-600">email</label>
+        <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="index.html">Register</a></button>
+    </div>
+  </div>
+</section>
+
+
 </body>
 </html>
