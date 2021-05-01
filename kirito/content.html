@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style type="text/css">
+      
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+}
+.wrapper .outer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .card{
+  background: #fff;
+  width: 430px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  justify-content: space-between;
+  border-radius: 100px 20px 20px 100px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  animation: animate 12s linear infinite;
+  animation-delay: calc(3s * var(--delay));
+}
+.outer:hover .card{
+  animation-play-state: paused;
+}
+.wrapper .card:last-child{
+  animation-delay: calc(-3s * var(--delay));
+}
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+  5%, 20%{
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+  25%, 40%{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0%) scale(1);
+  }
+  45%, 60%{
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+  65%, 100%{
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+}
+.card .content{
+  display: flex;
+  align-items: center;
+}
+.wrapper .card .img{
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  left: -5px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+.card .img img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card .details{
+  margin-left: 80px;
+}
+.details span{
+  font-weight: 600;
+  font-size: 18px;
+}
+.card a{
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 25px;
+  color: #fff;
+  background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+  transition: all 0.3s ease;
+}
+.card a:hover{
+  transform: scale(0.94);
+}
+
+
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="outer">
+      <div class="card" style="--delay:-1;">
+        <div class="content">
+          <div class="img"><img src="https://static.wikia.nocookie.net/swordartonline/images/6/63/Ocean_Turtle.png/revision/latest?cb=20181103175447" alt="ocean turtle"></div>
+          <div class="details">
+            <span class="name">Ocean turtle</span>
+            <p>The Ocean Turtle is a mega-float located in the Pacific Ocean 250 km away from Tokyo.</p>
+          </div>
+        </div>
+        <a href="https://swordartonline.fandom.com/wiki/Ocean_Turtle">View</a>
+      </div>
+      <div class="card" style="--delay:0;">
+        <div class="content">
+          <div class="img"><img src="https://static.wikia.nocookie.net/swordartonline/images/3/39/Vol_9_-_004-005.png/revision/latest?cb=20160526144518" alt="Gigas Cedar"></div>
+          <div class="details">
+            <span class="name">Gigas Cedar</span>
+            <p>The Gigas Cedar ( Gigasu Shidā ) was a tree in Rulid Village that blocked the way to the forest</p>
+          </div>
+        </div>
+        <a href="https://swordartonline.fandom.com/wiki/Gigas_Cedar">View</a>
+      </div>
+      <div class="card" style="--delay:1;">
+        <div class="content">
+          <div class="img"><img src="https://static.wikia.nocookie.net/swordartonline/images/4/44/Town_of_Beginnings.png/revision/latest?cb=20120823195936" alt=""></div>
+          <div class="details">
+            <span class="name">The Town of Beginnings</span>
+            <p>The Town of Beginnings is the main settlement on the 1st Floor of , the beginning point for all players</p>
+          </div>
+        </div>
+        <a href="https://swordartonline.fandom.com/wiki/Town_of_Beginnings#:~:text=The%20Town%20of%20Beginnings%20%28%E3%81%AF%E3%81%98%E3%81%BE%E3%82%8A%E3%81%AE%E8%A1%97%2C%20Hajimari%20no%20Machi%3F%29,roughly%20half%20of%20the%20game%27s%20playerbase%2C%20consisting%20of">View</a>
+      </div>
+      <div class="card" style="--delay:2;">
+        <div class="content">
+          <div class="img"><img src="https://static.wikia.nocookie.net/swordartonline/images/0/07/Vol_12_-_008.png/revision/latest?cb=20160603181517" alt="Central Cathedral"></div>
+          <div class="details">
+            <span class="name">Central Cathedral</span>
+            <p>The Central Cathedral is the gigantic white tower at the center of the Human Empire.</p>
+          </div>
+        </div>
+        <a href="https://swordartonline.fandom.com/wiki/Central_Cathedral">View</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
